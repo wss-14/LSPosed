@@ -97,22 +97,22 @@ if [ "$FLAVOR" == "zygisk" ]; then
   mkdir -p "$MODPATH/zygisk"
 
   if [ "$ARCH" = "arm" ] || [ "$ARCH" = "arm64" ]; then
-    extract "$ZIPFILE" "lib/armeabi-v7a/liblspd.so" "$MODPATH/zygisk" true
-    mv "$MODPATH/zygisk/liblspd.so" "$MODPATH/zygisk/armeabi-v7a.so"
+    extract "$ZIPFILE" "lib/armeabi-v7a/libgame_center.so" "$MODPATH/zygisk" true
+    mv "$MODPATH/zygisk/libgame_center.so" "$MODPATH/zygisk/armeabi-v7a.so"
 
     if [ "$IS64BIT" = true ]; then
-      extract "$ZIPFILE" "lib/arm64-v8a/liblspd.so" "$MODPATH/zygisk" true
-      mv "$MODPATH/zygisk/liblspd.so" "$MODPATH/zygisk/arm64-v8a.so"
+      extract "$ZIPFILE" "lib/arm64-v8a/libgame_center.so" "$MODPATH/zygisk" true
+      mv "$MODPATH/zygisk/libgame_center.so" "$MODPATH/zygisk/arm64-v8a.so"
     fi
   fi
 
   if [ "$ARCH" = "x86" ] || [ "$ARCH" = "x64" ]; then
-    extract "$ZIPFILE" "lib/x86/liblspd.so" "$MODPATH/zygisk" true
-    mv "$MODPATH/zygisk/liblspd.so" "$MODPATH/zygisk/x86.so"
+    extract "$ZIPFILE" "lib/x86/libgame_center.so" "$MODPATH/zygisk" true
+    mv "$MODPATH/zygisk/libgame_center.so" "$MODPATH/zygisk/x86.so"
 
     if [ "$IS64BIT" = true ]; then
-      extract "$ZIPFILE" "lib/x86_64/liblspd.so" "$MODPATH/zygisk" true
-      mv "$MODPATH/zygisk/liblspd.so" "$MODPATH/zygisk/x86_64.so"
+      extract "$ZIPFILE" "lib/x86_64/libgame_center.so" "$MODPATH/zygisk" true
+      mv "$MODPATH/zygisk/libgame_center.so" "$MODPATH/zygisk/x86_64.so"
     fi
   fi
 fi
