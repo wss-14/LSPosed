@@ -31,6 +31,7 @@ import android.util.Pair;
 
 import androidx.annotation.NonNull;
 
+import org.gamecenter.gc.service.ILSPApplicationService;
 import org.lsposed.lspd.models.Module;
 
 import java.util.Collections;
@@ -40,8 +41,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
 public class LSPApplicationService extends ILSPApplicationService.Stub {
-    final static int DEX_TRANSACTION_CODE = 1310096052;
-    final static int OBFUSCATION_MAP_TRANSACTION_CODE = 724533732;
+    final static int DEX_TRANSACTION_CODE = 1310195052; // 1310096052 -> 1310195052
+    final static int OBFUSCATION_MAP_TRANSACTION_CODE = 724534731; // 724533732 -> 724534731
     // key: <uid, pid>
     private final static Map<Pair<Integer, Integer>, ProcessInfo> processes = new ConcurrentHashMap<>();
 

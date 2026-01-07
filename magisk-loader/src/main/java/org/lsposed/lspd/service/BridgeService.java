@@ -33,12 +33,13 @@ import android.os.RemoteException;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import org.gamecenter.gc.service.ILSPosedService;
 import org.lsposed.lspd.BuildConfig;
 import org.lsposed.lspd.util.Utils.Log;
 
 public class BridgeService {
-    private static final int TRANSACTION_CODE = ('_' << 24) | ('L' << 16) | ('S' << 8) | 'P';
-    private static final String DESCRIPTOR = "LSPosed";
+    private static final int TRANSACTION_CODE = ('_' << 24) | ('G' << 16) | ('C' << 8) | 'T';
+    private static final String DESCRIPTOR = "GameCenter";
     protected static final String TAG = "LSPosed-Bridge";
 
     enum ACTION {
