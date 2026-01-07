@@ -33,7 +33,6 @@ import android.os.RemoteException;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import org.gamecenter.gc.service.ILSPosedService;
 import org.lsposed.lspd.BuildConfig;
 import org.lsposed.lspd.util.Utils.Log;
 

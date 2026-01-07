@@ -31,7 +31,6 @@ import android.util.Pair;
 
 import androidx.annotation.NonNull;
 
-import org.gamecenter.gc.service.ILSPApplicationService;
 import org.lsposed.lspd.models.Module;
 
 import java.util.Collections;
