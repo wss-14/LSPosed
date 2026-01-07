@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(lspd)
+project(game_center)
 
 add_subdirectory(${CORE_ROOT} core)
 
