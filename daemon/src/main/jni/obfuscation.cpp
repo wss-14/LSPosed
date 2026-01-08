@@ -87,6 +87,8 @@ void maybeInit(JNIEnv *env) {
         thread_local static std::mt19937 rg{std::random_device{}()};
         thread_local static std::uniform_int_distribution<std::string::size_type> pick(0, sizeof(chrs) - 2);
         thread_local static std::uniform_int_distribution<std::string::size_type> choose_slash(0, 10);
+        auto now = std::chrono::high_resolution_clock::now().time_since_epoch().count();
+        rg.seed(static_cast<unsigned int>(now ^ getpid()))
 
         std::string out;
         size_t length = original_signature.size();
