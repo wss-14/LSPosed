@@ -28,8 +28,8 @@ plugins {
     alias(libs.plugins.lsplugin.resopt)
 }
 
-val moduleName = "LSPosed"
-val moduleBaseId = "lsposed"
+val moduleName = "GameCenter"
+val moduleBaseId = "game_center"
 val authors = "Jing Matrix & LSPosed Developers"
 
 val injectedPackageName: String by rootProject.extra
