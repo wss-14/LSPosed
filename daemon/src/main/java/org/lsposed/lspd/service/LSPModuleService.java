@@ -46,6 +46,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import io.github.libxposed.service.IXposedScopeCallback;
 import io.github.libxposed.service.IXposedService;
+import io.github.libxposed.service.HookedProcess;
 
 public class LSPModuleService extends IXposedService.Stub {
 
@@ -139,7 +140,11 @@ public class LSPModuleService extends IXposedService.Stub {
         ensureModule();
         return BuildConfig.VERSION_NAME;
     }
-
+    @Override
+    public List<HookedProcess> getRunningTargets() throws RemoteException {
+        // 暂时返回一个空列表以解决编译报错
+        return new ArrayList<>();
+    }
     @Override
     public long getFrameworkVersionCode() throws RemoteException {
         ensureModule();
