@@ -196,10 +196,6 @@ public class LSPModuleService extends IXposedService.Stub {
         return bundle;
     }
     @Override
-    public List<String> getRunningTargets() {
-        return java.util.Collections.emptyList();
-    }
-    @Override
     public void updateRemotePreferences(String group, Bundle diff) throws RemoteException {
         var userId = ensureModule();
         Map<String, Object> values = new ArrayMap<>();
