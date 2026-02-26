@@ -195,7 +195,10 @@ public class LSPModuleService extends IXposedService.Stub {
         bundle.putSerializable("map", ConfigManager.getInstance().getModulePrefs(loadedModule.packageName, userId, group));
         return bundle;
     }
-
+    @Override
+    public List<String> getRunningTargets() {
+        return java.util.Collections.emptyList();
+    }
     @Override
     public void updateRemotePreferences(String group, Bundle diff) throws RemoteException {
         var userId = ensureModule();
