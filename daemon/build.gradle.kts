@@ -36,6 +36,7 @@ val agpVersion: String by project
 val defaultManagerPackageName: String by rootProject.extra
 
 android {
+    compileSdk=36
     buildFeatures {
         prefab = true
         buildConfig = true
