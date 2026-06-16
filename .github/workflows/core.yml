@@ -90,15 +90,14 @@ jobs:
         run: rm -rf $ANDROID_HOME/cmake
 
       - name: Build dependencies
-        working-directory: libxposed
         run: |
           echo 'org.gradle.caching=true' >> ~/.gradle/gradle.properties
           echo 'org.gradle.parallel=true' >> ~/.gradle/gradle.properties
           echo 'org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8 -XX:+UseParallelGC' >> ~/.gradle/gradle.properties
           echo 'android.native.buildOutput=verbose' >> ~/.gradle/gradle.properties
-          cd api
+          cd ${{ github.workspace }}/libxposed/api
           ./gradlew publishToMavenLocal
-          cd ../service
+          cd ${{ github.workspace }}/libxposed/service
           ./gradlew publishToMavenLocal
 
       - name: Build with Gradle
