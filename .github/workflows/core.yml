@@ -95,10 +95,14 @@ jobs:
           echo 'org.gradle.parallel=true' >> ~/.gradle/gradle.properties
           echo 'org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8 -XX:+UseParallelGC' >> ~/.gradle/gradle.properties
           echo 'android.native.buildOutput=verbose' >> ~/.gradle/gradle.properties
+          
+          # 进入 api 目录，并强制以 100 版本号发布到本地
           cd ${{ github.workspace }}/libxposed/api
-          ./gradlew publishToMavenLocal
+          ./gradlew publishToMavenLocal -Pversion=100
+          
+          # 进入 service 目录，同样强制以 100 版本号发布到本地
           cd ${{ github.workspace }}/libxposed/service
-          ./gradlew publishToMavenLocal
+          ./gradlew publishToMavenLocal -Pversion=100
 
       - name: Build with Gradle
         run: |
