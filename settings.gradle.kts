@@ -5,13 +5,18 @@ pluginManagement {
         gradlePluginPortal()
         google()
         mavenCentral()
-        maven { url = uri("https://jitpack.io") }
     }
 }
 
 dependencyResolutionManagement {
     repositoriesMode = RepositoriesMode.FAIL_ON_PROJECT_REPOS
     repositories {
+        maven {
+            url = uri("third_party/maven")
+            content {
+                includeGroup("io.github.libxposed")
+            }
+        }
         google()
         mavenCentral()
         mavenLocal {
@@ -19,7 +24,6 @@ dependencyResolutionManagement {
                 includeGroup("io.github.libxposed")
             }
         }
-        maven { url = uri("https://jitpack.io") }
     }
     versionCatalogs {
         create("libs")
