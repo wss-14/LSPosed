@@ -141,9 +141,27 @@ val generateWebRoot = tasks.register<Copy>("generateWebRoot") {
     into(webrootsrc)
 
     doLast {
+        File(webroottmp, "package.json").writeText(
+            """
+            |{
+            |  "private": true,
+            |  "devDependencies": {
+            |    "kernelsu": "3.0.2",
+            |    "parcel-bundler": "1.12.5"
+            |  },
+            |  "pnpm": {
+            |    "onlyBuiltDependencies": [
+            |      "core-js",
+            |      "deasync",
+            |      "parcel-bundler"
+            |    ]
+            |  }
+            |}
+            |""".trimMargin()
+        )
         exec {
             workingDir = webroottmp
-            commandLine("pnpm", "add", "-D", "parcel-bundler", "kernelsu")
+            commandLine("pnpm", "install")
         }
         exec {
             workingDir = webroottmp
